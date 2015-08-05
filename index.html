@@ -1,76 +1,190 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <link href='sunrayscloud.ico' rel='icon'>
+        <link href='sunrayscloud.ico' rel='apple-touch-icon-precomposed' type='image/png'>
+        
+        <title>Cost Saving 2014</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'/>
+        <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet'/>
+        <link href='bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet'/>
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Cost Saving Calculator by xkid</title>
-  </head>
-
-  <body>
-    <a id="forkme_banner" href="https://github.com/xkid/CostSaving2014">View on GitHub</a>
-    <div class="shell">
-
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Cost Saving Calculator</h1>
-            <h2>Simple Calculator for Cost Saving while using LED compare to Florescence.</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/xkid/CostSaving2014/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/xkid/CostSaving2014/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h3>
-<a id="welcome-to-cost-saving-calculator" class="anchor" href="#welcome-to-cost-saving-calculator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Cost Saving Calculator.</h3>
-
-<p>This is a simple calculator to calculate the cost saving while you are changing your house florescence light to LED light in Malaysia.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>In 2014 <a href="https://github.com/xkid" class="user-mention">@xkid</a> me only</p>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/xkid">xkid</a> can be found on <a href="https://github.com/xkid/CostSaving2014">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
+    </head>
+    <body>
+        <div class="container">
+          <!-- Input row -->
+          <div class="row text-center">
+            <legend>
+              <i class="fa fa-usd"></i> Cost Saving Calculator 2014
+              
+            </legend>
+            <div>
+                  <div class="row">
+                      <div class="span4">
+                      <label for="inputkwh">TNB tariff (RM/kWh):</label>
+                        <input type="number" name="inputkwh" id="inputkwh" step="any" placeholder="0.509" value="0.509">
+                      </div>
     
-  </body>
+                      <div class="span4">
+                      <label for="inputflo">Total Florescence:</label>
+                        <input type="number" name="inputflo" id="inputflo" placeholder="Florescence" value="1">
+                      </div>
+    
+                      <div class="span4">
+                      <label for="inputhour">Estimate Hours/Day:</label>
+                        <input type="number" name="inputhour" id="inputhour" placeholder="Hours / Day" value="24">
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                      <div class="span4">
+                      <label for="inputflowatt">Florescence Watt:</label>
+                        <input type="number" name="inputflowatt" id="inputflowatt" placeholder="Florescence Watt 42 / 45" value="45">
+                      </div>
+                      <div class="span4">
+                      <label for="inputledwatt">LED Watt:</label>
+                        <input type="number" name="inputledwatt" id="inputledwatt" placeholder="LED Watt 18 / 28" value="18">
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                      <div class="span4">
+                      <label for="inputfloprice">Florescence Price:</label>
+                        <input type="number" name="inputfloprice" id="inputfloprice" step="any" placeholder="6" value="6">
+                      </div>
+                      
+                      <div class="span4">
+                      <label for="inputledprice">LED Price:</label>
+                        <input type="number" name="inputledprice" id="inputledprice" step="any" placeholder="48.95" value="48.95">
+                      </div>
+                  </div>
+
+            </div>
+          </div>
+          <!-- End Input row -->
+          
+          <!-- Result -->
+          <div class="row" id="table-result">
+            <div class="text-center">
+                <!-- 
+                <div class="text-left span8 offset2">
+                  RM / kWh : <b id="kwh"></b><br>
+                  Florescence : <b id="flo"></b><br>
+                  Hours : <b id="hour"></b><br>
+                  Florescence Watt : <b id="flowatt"></b><br>
+                  LED Watt : <b id="ledwatt"></b><br>
+                </div>
+                -->
+                <table class="table span10 offset1" id="table-chart">
+                
+                </table>
+            </div>
+            <div class="container">
+                <div class="row"><div class="span4 offset4 text-center"><h3>ROI Calculator</h3></div></div> 
+                <div class="row"><div class="span4 offset4 text-center"><label for="inputmonth">Month :</label><input type="number" name="inputmonth" id="inputmonth" placeholder="24" value="24"></div></div>
+                <div class="row" id="table-roi"></div>   
+            </div>
+          </div>
+          <!-- End Result -->
+        </div>
+        <div class="span4 offset4 text-center">Developed By <a href="http://github.com/xkid">XKID</a></div>
+        <script src="jquery-2.0.3.min.js"></script>
+        <script>
+        
+            $(document).ready(function() {
+                
+                
+                $("#table-result").hide();
+                
+                $("input").keyup(function(){
+                
+                    var kwh = $("#inputkwh").val();
+                    var flo = $("#inputflo").val();
+                    var hour = $("#inputhour").val();
+                    var flowatt = $("#inputflowatt").val();
+                    var ledwatt = $("#inputledwatt").val();
+                    var total = 0;
+                    var kwhflousedpermonth = 0;
+                    var kwhledusedpermonth = 0;
+                    var diffledflo = 0;
+                    var difffloled = 0;
+                    var floprice = $("#inputfloprice").val();
+                    var ledprice = $("#inputledprice").val();
+
+                    $("#table-result").show();
+                    //$("#table-result").html("<b>" + $("#inputledwatt").val() +"</b>");
+                    /*
+                    $("#kwh").html("RM " + kwh);
+                    $("#flo").html(flo);
+                    $("#hour").html(hour + " hour");
+                    $("#flowatt").html(flowatt + " W");
+                    $("#ledwatt").html(ledwatt + " W");
+                    */
+                    kwhflousedpermonth = (flo * (flowatt/1000) * hour * 30).toFixed(2);
+                    kwhledusedpermonth = (flo * (ledwatt/1000) * hour * 30).toFixed(2);
+                    
+                    diffledflo = (kwhflousedpermonth - kwhledusedpermonth).toFixed(2);
+                    difffloled = (kwhledusedpermonth - kwhflousedpermonth).toFixed(2);
+                    
+                    $("#table-chart").html('<tr><td><span id="formula"><h3>Comparison Table</h3></span></td><td></td><td></td></tr>');
+    
+                    $("#table-chart").append('<tr><td>&nbsp;</td><td>'+flo+' LED</td><td>'+flo+' Florescence</td></tr>');
+                    
+                    $("#table-chart").append('<tr><td>Watt / Month</td><td><b>'+kwhledusedpermonth+' kWh <span class="text-error">(Save '+diffledflo+' kWh)</b></span><span class="formula"><br>'+flo+' * '+(ledwatt/1000)+' kWh * '+hour+' hour * 30 Days</span></td><td>'+kwhflousedpermonth+' kWh<span class="formula"><br>'+flo+' * '+flowatt+' W * '+hour+' hour * 30 Days</span></td></tr>');
+                    $("#table-chart").append('<tr><td>Cost / Month</td><td><b>RM '+(kwhledusedpermonth*kwh).toFixed(2)+' <span class="text-error">(Save RM '+(diffledflo*kwh).toFixed(2)+')</span></b><span class="formula"><br>'+kwhledusedpermonth+' kWh * RM '+kwh+'</span></td><td><b>RM '+(kwhflousedpermonth*kwh).toFixed(2)+'</b><span class="formula"><br>'+kwhflousedpermonth+' kWh * RM '+kwh+'</span></td></tr>');
+                    
+                    $("#table-chart").append('<tr><td>Cost Invest</td><td><b>RM '+(flo*ledprice)+'</b><span class="formula"><br>'+flo+' * RM '+ledprice+'</span></td><td>RM '+(flo*floprice)+'<span class="formula"><br>'+flo+' * RM '+floprice+'</span></td></tr>');
+                    
+                    $("#table-chart").append('<tr><td>Cost Saving / Year</td><td><b>RM '+(diffledflo*kwh*12).toFixed(2)+'</b><span class="formula"><br>RM '+(diffledflo*kwh).toFixed(2)+' * 12 month</span></td><td>RM '+(difffloled*kwh*12).toFixed(2)+'<span class="formula"><br>RM '+(difffloled*kwh).toFixed(2)+' * 12 month</span></td></tr>');
+
+                    $("#table-chart").append('<tr><td>ROI % / 1st Year</td><td><b>'+(((diffledflo*kwh*12)-(flo*ledprice))/(flo*ledprice)*100).toFixed(2)+'%</b><span class="formula"><br>(RM '+(diffledflo*kwh*12).toFixed(2)+' - RM '+(flo*ledprice)+') / RM '+(flo*ledprice)+' * 100%</span></td><td>'+((difffloled*kwh*12)/(flo*floprice)*100).toFixed(2)+'%</td></tr>');
+                    $("#table-chart").append('<tr><td>ROI % / 2nd Year</td><td><b>'+(((diffledflo*kwh*12))/(flo*ledprice)*100).toFixed(2)+'%</b><span class="formula"><br>RM '+(diffledflo*kwh*12).toFixed(2)+' / RM '+(flo*ledprice)+' * 100%</span></td><td>'+((difffloled*kwh*12)/(flo*floprice)*100).toFixed(2)+'%</td></tr>');
+
+                    
+                    $("#formula").click(function(){
+                        $(".formula").toggle();
+                    });
+                    
+                    function roi(month,invest,save){
+                      var msg;
+                      invest = 0-invest;
+                      msg = '<table class="table span10 offset1">';
+                      for (var i=1;i<=month;i++)
+                      { 
+                          
+                          msg = msg + '<tr><td>'+ i +' month</td><td>RM ' + invest + ' + RM ' + save + '</td>';
+                          invest = (+invest + +save).toFixed(2);
+                          if (invest < 0){
+                            msg = msg + '<td style="color:red;">RM ' + invest + '</td></tr>';
+                          }else{
+                            msg = msg + '<td>RM ' + invest + '</td></tr>';
+                          }
+                          
+                          
+                      }
+                      msg = msg + '</table>';
+                      return msg;
+                    }
+                    
+                    var month = $("#inputmonth").val();
+                    $("#table-roi").html(roi(month,flo*ledprice,(diffledflo*kwh).toFixed(2)));
+                    
+                    $("#inputmonth").bind("keyup change",function(){
+                      month = $("#inputmonth").val();
+                      $("#table-roi").html(roi(month,flo*ledprice,(diffledflo*kwh).toFixed(2)));    
+                    });
+                    
+                    
+                    
+                });
+                
+            });
+        
+        </script>
+    </body>
 </html>
